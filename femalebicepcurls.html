@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera Stream and Image</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+            }
+            @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inter:wght@100&display=swap');
+        
+        .image-container {
+            border: 10px solid white; /* Border style */
+            display: inline-block; /* Make the container inline-block to fit the content */
+            border-radius: 10px;
+            
+        }
+        .description {
+            flex-basis: 48%;
+            margin-top: 10px;
+            margin-left: 19vw;
+            padding: 5px 15px;
+            color: white;
+            background-color: #5876fc;/* Background color for the box */
+             /* Add padding to create space inside the box */
+            border-radius: 8px;
+            height:10vh;
+            
+            width: 60vh;
+
+        }
+        
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .image-container,
+            .description {
+                flex-basis: 100%;
+            }
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        #camera{
+           
+            margin-left: -110px;
+        }
+        
+        .image-container img {
+            height: 400px;
+        }
+        .heading-container{
+    display: flex;
+  justify-content: space-between; /* Space items evenly along the main axis */
+  align-items: center; /* Center items vertically */
+  background-color: rgb(88, 118, 252);
+  border-radius: 10px;
+  padding: 0 20px; /* Add padding to the container */
+  height: 60px;
+  color: white;
+  margin-top: 10px; 
+  margin-bottom: 5vh;
+}
+
+
+#myButton {
+  background: #6cb9e6;
+  border-radius: 999px;
+  box-shadow: #010a0a 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 7px 25px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+  margin-right: 8vh;
+  height: 35px;
+}
+</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <div>
+        <div class="wave"></div>
+       <div class="wave"></div>
+       <div class="wave"></div>
+    <div class="heading-container">
+        <h1 class="heading">Bicep Curls</h1>
+        <button id="myButton" type="submit">Next</button>
+     </div>
+    <div class="container">
+        <div id="camera" class="image-container" style="border-radius: 20px;">
+            <img src="{{ url_for('video_feed19') }}" alt="Camera Stream" width="600vh" height="650vh" style="border-radius: 10px;">
+        </div>
+       
+        <div class="image-container">
+            <img src="https://cdn.jefit.com/assets/img/exercises/gifs/1025.gif" alt="Image" width="400" height="100" >
+        </div>
+        <div class="description">
+            <p style="margin-top: 10px;">It is a bicep exercise that involves holding a dumbbell in one hand and curling it upward. It is one of the most effective exercises to build bigger arms, forearms and shoulders.</p>
+            
+                <script>
+                    $(document).ready(function(){
+                        
+            function updateCount() {
+                $.get("/get_femalecount", function(data) {
+                    femalecount = parseInt(data);
+                    $("#femalecount").text(data);
+                    if (femalecount >= 8) {
+                        data=0;
+                        // Redirect to "/backfootdefence" route
+                        window.location.href = "/thankyou";
+                    }
+                });
+            }
+
+
+            // Update count initially
+            updateCount();
+
+            // Update count every 1 second
+            setInterval(updateCount, 1000);
+            window.getCount = function() {
+                return femalecount;
+            };});
+                    // Add event listener to the button
+                    document.getElementById("myButton").addEventListener("click", function() {
+                        // Replace "nextpage" with the URL of the next page you want to navigate to
+                        window.location.href = "/thankyou";
+                    });
+                </script>
+        </div>
+    </div>
+    
+</body>
+</html>

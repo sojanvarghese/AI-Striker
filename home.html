@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+  <html lang="en">
+        <head>                                                                                       
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="style.css">
+            <link href='https://fonts.googleapis.com/css?family=Bebas Neue' rel='stylesheet'>
+            <link href='https://fonts.googleapis.com/css?family=Bruno Ace' rel='stylesheet'>
+            <title>AI STRIKER</title>
+        </head>
+        <style>
+         
+            html{
+                background-color: #92EFFD;
+                overflow: hidden;
+            }
+            #mainHeading{
+                background-image: linear-gradient(to right,#4E65FF,#92EFFD );
+                width:53vw;
+                height: 101vh;
+                border-radius: 4px;
+                font-family: 'Bruno Ace';
+                letter-spacing: 3px;
+                margin-top: -40PX;
+                margin-left: -20PX;
+                
+            }
+            #caption {
+                margin: -79vh 5vw 0vh 55vw;
+                padding: 0px 20px;
+                letter-spacing: 1px;
+                font-family: 'Bebas Neue';
+                color: rgb(39, 39, 39);
+                border-left: 7px solid #6ba0fe;
+
+            }
+            #cap {
+                font-size: 55px;
+                font-weight: 600;
+                line-height: 55px;
+                animation-duration: 3s;
+                animation-name: slidein;
+            }
+            #small {
+                font-size: xx-large;
+                font-weight: bold;
+                margin-top: -49px;
+                animation-duration: 3s;
+                animation-name: slidein;
+            }
+            #mainHead{
+                margin-left: 20PX;
+                color: white;
+                text-shadow: 2PX 2PX 2PX rgb(38, 38, 38);
+                padding-top: 15px;   
+            }
+            form {
+                border-radius: 5px;
+                margin-left: 55vw;
+                margin-top: -12px;
+            }
+            #email{
+                width:32.3vw;
+                height: 40px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                background-color: white;
+                font-size: 16px;
+        
+            }
+            /* #password{ 
+                width:20vw;
+                height: 40px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                background-color: white;
+                font-size: 16px;
+        
+            }*/
+            #gs{
+                width: 12.1vw;
+                height: 40px; ;
+                background-color: #d22b2b;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 16px;
+                
+                box-shadow: rgba(0, 0, 0, 0.15) 0px 4px 4px 0px;
+            }
+            #mainHead {    
+                margin-left: 11.5vw;
+                color: white;
+                text-shadow: 1PX 1PX 1PX rgb(38, 38, 38);
+                padding-top: 330PX; 
+                letter-spacing: 3px;
+                outline: transparent;
+                position: relative;
+                font-size: 60PX;
+            }
+        </style>
+        <body>
+            <div id="mainHeading">
+                <h1 id="mainHead">AI STRIKER</h1>
+            </div>
+            <div id="wholePart"></div>
+            <div id="caption">
+                <p id="cap">EXPERIENCE CRICKET, YOGA & GYM IN A SINGLE PLATFORM</p>
+                <p id="small">Train anywhere. Train anytime.</p>
+                </p>    
+            </div>
+            <form method="post" action="/check_user">        
+                <input type="email" id="email" name="email" placeholder=" Enter Email"><br><br>
+                <!-- <input type = "password" id="password" name="password" placeholder="Enter password"><br><br> -->
+                <button type="submit" id="gs" value="submit" >Get Started ></button>
+            </form>
+        </body>
+  </html>
